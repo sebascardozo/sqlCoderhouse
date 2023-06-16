@@ -20,7 +20,7 @@ PRIMARY KEY (id)
 CREATE TABLE IF NOT EXISTS agencia.compra_realizada (
 id INT AUTO_INCREMENT,
 codigo_producto INT NOT NULL ,
-precio VARCHAR (50) NOT NULL ,
+precio DECIMAL(11,2) DEFAULT 0,
 agente_venta VARCHAR(50) NOT NULL ,
 PRIMARY KEY (id) 
 );
@@ -64,6 +64,16 @@ precio DECIMAL (11,2) ,
 PRIMARY KEY (id) 
 );
 
+CREATE TABLE IF NOT EXISTS agencia.reserva_bus(
+id INT AUTO_INCREMENT ,
+nombre_bus VARCHAR (50) NOT NULL ,
+nombre_cliente VARCHAR(40) NOT NULL ,
+dni_cliente VARCHAR(14) ,
+fecha_reserva DATETIME (6) NOT NULL,
+precio DECIMAL (11,2) ,
+PRIMARY KEY (id) 
+);
+
 CREATE TABLE IF NOT EXISTS agencia.reserva_tours(
 id INT AUTO_INCREMENT ,
 nombre_tours VARCHAR (50) NOT NULL ,
@@ -73,5 +83,24 @@ precio DECIMAL (11,2) ,
 PRIMARY KEY (id) 
 );
 
+CREATE TABLE IF NOT EXISTS agencia.facturacion (
+	id INT AUTO_INCREMENT,
+    id_cliente INT NOT NULL,
+    id_agente INT NOT NULL,
+    subtotal DECIMAL(11,2) DEFAULT 0,
+    iva DECIMAL(11,2) DEFAULT 0,
+    total DECIMAL(11,2) DEFAULT 0,
+    fecha_hora DATETIME DEFAULT CURRENT_TIMESTAMP(),
+    PRIMARY KEY (id)
+    );
+CREATE TABLE IF NOT EXISTS agencia.agentes (
+	id INT AUTO_INCREMENT,
+    nombre VARCHAR(30) NOT NULL,
+    apellido VARCHAR(30) NOT NULL,
+    tipo_documento VARCHAR(3) DEFAULT 'DNI',
+    documento VARCHAR(14),
+    PRIMARY KEY (id),
+    INDEX nombre (nombre, apellido)
+);
 
 

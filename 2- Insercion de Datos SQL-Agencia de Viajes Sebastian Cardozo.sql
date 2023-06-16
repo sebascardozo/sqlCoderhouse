@@ -23,15 +23,15 @@ INSERT INTO agencia.clientes ( nombre, apellido, documento, edad, sexo, direccio
 
 
 INSERT INTO agencia.compra_realizada ( codigo_producto, precio, agente_venta)  VALUES 
-('1', '$69027.76', 'Gae Rother') ,
-('2', '$307.22', 'Bay Fiddyment'),
-('3', '$4422.83', 'Archibold Clemont'),
-('4', '$5814.15', 'Feliza Dandy'),
-('5', '$93952.89', 'Candy Coste'),
-('6', '$56318.54', 'Cory Cranmore'),
-('7', '$13851.53', 'Marigold Trippick'),
-('8', '$41661.27', 'Saxon Gooble'),
-('9', '$97445.17', 'Ivie Cargill');
+('1', '69027.76', 'Gae Rother') ,
+('2', '307.22', 'Bay Fiddyment'),
+('3', '4422.83', 'Archibold Clemont'),
+('4', '5814.15', 'Feliza Dandy'),
+('5', '93952.89', 'Candy Coste'),
+('6', '56318.54', 'Cory Cranmore'),
+('7', '13851.53', 'Marigold Trippick'),
+('8', '41661.27', 'Saxon Gooble'),
+('9', '97445.17', 'Ivie Cargill');
 
 
 INSERT IGNORE INTO agencia.envio_orden_compra  (id, correo, telefono, agente_venta, telefono_agente) VALUES
@@ -104,6 +104,16 @@ INSERT INTO agencia.reserva_vuelo (nombre_vuelo, nombre_cliente, dni_cliente, fe
 ('NA', 'Hadria Piddington', '5950716302', '22/03/25', '58072.28'),
 ('AS', 'Hew England', '3877436552', '22/03/25', '3350.44');
 
+INSERT INTO agencia.reserva_bus (nombre_bus, nombre_cliente, dni_cliente, fecha_reserva, precio) VALUES 
+('Coata', 'Luisa perez', '0195070089', '20/03/25', '1321'),
+('Metro bus', 'Malissa Cambridge', '9846426968', '21/03/25', '24971.03'),
+('Chevallier', 'Briny Vazques', '2433222982', '18/05/25', '54092.90'),
+( 'Oerx', 'Eleanora Marre', '1401216927', '19/03/24', '54370.90'),
+('Norte', 'Mia Gyurko', '2657230946', '24/03/25', '74778.71'),
+('Occiodente', 'Loree Bossom', '7111098234', '22/07/25', '73885.01'),
+('Neyos', 'Nikita Chesher', '4095685530', '23/08/25', '32217.42'),
+('Aspen', 'Peter England', '3877436552', '21/03/25', '3350.44');
+
 INSERT INTO agencia.reserva_tours (nombre_tours, nombre_cliente,  dni_cliente, precio) VALUES
 ('Радовиш', 'MONTAÑA', '1351574574',  '98515.94'),
 ('Requião', 'Ricuito uno', '5316653130',  '33718.81'),
@@ -118,3 +128,16 @@ INSERT INTO agencia.reserva_tours (nombre_tours, nombre_cliente,  dni_cliente, p
 ('Jiazhi', 'Pierette Bullion', '3770938615',  '38005.79'),
 ('Pokój', 'Mata Skatcher', '4687704816', '50147.81');
 
+INSERT INTO agencia.facturacion (id_cliente, id_agente, subtotal, iva, total) VALUES
+(1, 2, 1899.89, 398.98, 2298.87),
+(3, 3, 1289.80, 270.86, 1560.66),
+(6, 1, 489.90, 102.88, 592.78),
+(14, 1, 2389.79, 501.86, 2891.65);
+
+INSERT INTO agencia.agentes (nombre, apellido, tipo_documento, documento) VALUES
+('Agustin', 'Sortero', 'DNI', '65434565'),
+('Sofia', 'Diestra', 'DNI', '34525456'),
+('Eugenia', 'Gonzales', 'DNI', '65475667'),
+('Pablo', 'Perez', 'DNI', '67475667'),
+('Melina', 'Lopez', 'DNI', '65471667'),
+('Sebastian', 'Messi', 'DNI', '65475667');
