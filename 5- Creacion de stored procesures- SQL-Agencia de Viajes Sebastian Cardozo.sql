@@ -1,12 +1,12 @@
 -- stored procedures que borra hotel por su número de id" 
 
 DELIMITER $$
-CREATE PROCEDURE delete_hotel(
-    IN reserva_hotel_id INT
+CREATE PROCEDURE borrar_hotel(
+    IN id_hotel CHAR(20)
 )
 BEGIN
     DELETE FROM reserva_hotel
-    WHERE id_reserva_hotel = reserva_hotel_id;
+    WHERE id = id_hotel;
 END $$
 
 DELIMITER $$
